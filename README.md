@@ -22,30 +22,6 @@
 https://xxxxxxx.vercel.app/config/url=https://xxxxxxsubscribe?token=123456/&file=https://github.com/Toperlock/sing-box-subscribe/raw/main/config_template/config_template_groups_tun.json
 ```
 
-2023.10.26更新: 支持链接后面增加 `emoji`, `tag`, `prefix`, `UA`, `file`参数用 `&` 连接多个参数, 用法与 `providers.json` 里的参数一样
-
-`/config/URL_LINK/&emoji=1&prefix=♥&UA=v2rayng&file=https://xxxxxxxxx.json`
-
-上面例子表示：开启emoji，节点名前加♥，使用v2rayng用户代理，使用 `https://xxxxxxxxx.json` 作为生成 sing-box 配置模板
-
-示例：https://sing-box-subscribe.vercel.app/config/https://gist.githubusercontent.com/Toperlock/b1ca381c32820e8c79669cbbd85b68ac/raw/dafae92fbe48ff36dae6e5172caa1cfd7914cda4/gistfile1.txt/&file=https://github.com/Toperlock/sing-box-subscribe/raw/main/config_template/config_template_groups_tun.json
-
-### 演示视频
-
-|网页解析通用订阅链接(v2/clash/sing-box)|
-|-----------------------------|
-|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/a583c443-0c7b-454e-aaf2-f0a7159b276a"></video>|
-
-## 导航
-
-[操作演示视频](https://github.com/Toperlock/sing-box-subscribe#-%E5%8A%9F%E8%83%BD%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91)
-
-[参数填写含义](https://github.com/Toperlock/sing-box-subscribe#providersjson%E6%96%87%E4%BB%B6)
-
-[模板内容详解](https://github.com/Toperlock/sing-box-subscribe#config%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6)
-
-[Windows使用](https://github.com/Toperlock/sing-box-subscribe#windows-sing-box-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
-
 ## 支持协议
 
 |  协议 | V2格式 | Clash格式 | 标准URI格式 | SingBox格式 |
@@ -93,30 +69,6 @@ https://xxxxxxx.vercel.app/config/url=https://xxxxxxsubscribe?token=123456/&file
 如果你想让手动立即更新，可以查看 [Github 的文档](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) 了解如何让 fork 的项目与上游代码同步。
 
 你可以 star/watch 本项目或者 follow 作者来及时获得新功能更新通知。
-
-## 页面操作步骤
-
-[示例网站](https://sing-box-subscribe.vercel.app/)。打开自己部署的网站，编辑右侧`编辑服务器 TEMP_JSON_DATA`方框内容，点击`保存`，左上角选择配置模板，点击`生成配置文件`。👉🏻[参数填写查看](https://github.com/Toperlock/sing-box-subscribe#providersjson%E6%96%87%E4%BB%B6)
-
-ios配合快捷指令复制网页内容，或者内容太多选择下载文稿后自行解决文稿后缀问题。👉🏻[快捷指令安装](https://www.icloud.com/shortcuts/75fd371e0aa8438a89f715238a21ee68)
-
-Android使用chrome浏览器打开网页生成配置文件（请在浏览器 设置-无障碍 缩小网页），长按内容，全选，分享到代码编辑器里，检查编辑器是否显示内容完整。👉🏻[编辑器安装](https://mt2.cn/download/)
-
-**注意点击保存后，尽快去生成配置文件，不然你填的内容会一直保留在网页上，别人打开网站也可以浏览到。目前想不到解决办法**
-
-<div align="left">
-  <img src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/95a79758-245b-4806-a483-b2993db7e62e" alt="how-to-use" width="50%" />
-</div>
-
-## 🎬 功能演示视频
-
-|网页解析通用订阅链接(v2/clash/sing-box)|网页批量解析URI|安卓谷歌浏览器页面缩小|
-|-----------------------------|-----------------------------|-----------------------------|
-|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/9b3c006d-d554-435b-99c9-b28d4ccaad74"></video>|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/88b0fa0e-b732-4018-8003-21f1a65586a9"></video>|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/f534503c-ed3f-4d67-8302-d498cc3fc805"></video>
-
-|本地解析通用订阅链接(v2/clash/sing-box)|本地批量解析URI|
-|-----------------------------|-----------------------------|
-|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/1249bb6a-54e4-44ef-9eb2-6057108bc337"></video>|<video controls width="250" src="https://github.com/Toperlock/sing-box-subscribe/assets/86833913/f88b392c-ea81-4460-b8af-00fe879affb0"></video>|
 
 # 二、本地安装
 ### PC安装3.10及以上的[python](https://www.python.org/)版本，注意安装步骤里把python添加到系统环境变量（google安装步骤）
@@ -387,18 +339,3 @@ windows系统建议将命令添加到批处理程序运行。
 </div>
 
 </details>
-
-# 感谢
-- [一佬](https://github.com/xream)
-- [sing-box](https://github.com/SagerNet/sing-box)
-- [yacd](https://github.com/haishanh/yacd)
-- [clash](https://github.com/Dreamacro/clash)
-- [sing-box-examples@chika0801](https://github.com/chika0801/sing-box-examples)
-
-部分协议解析参考了[convert2clash](https://github.com/waited33/convert2clash)
-
-部分clash2v2ray参考了[clash2base64](https://github.com/yuanyiwei/toys/blob/master/DEPRECATED/clash/clash2base64.py)
-
-同步代码参考了[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)
-
-感谢@SayRad的越南翻译

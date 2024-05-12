@@ -214,7 +214,7 @@
         "proxy"
       ],
       "filter":[
-        {"action":"include","keywords":["GPT|gpt"]}
+        {"action":"include","keywords":["GPT|gpt|🇺🇸|US|us|美国|美|United States|🇯🇵|JP|jp|日本|日|Japan"]}
       ]
     },
     {

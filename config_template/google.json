@@ -236,14 +236,6 @@
       ]
     },
     {
-      "tag":"🌏 cn",
-      "type":"selector",
-      "outbounds":[
-        "direct",
-        "proxy"
-      ]
-    },
-    {
       "tag":"🛑 AdBlock",
       "type":"selector",
       "outbounds":[
@@ -343,14 +335,6 @@
         "geosite":"geolocation-!cn",
         "outbound":"🌏 !cn"
       },
-      {
-        "geoip": ["private","cn"],
-        "outbound": "🌏 cn"
-      },
-      {
-        "geosite": "cn",
-        "outbound": "🌏 cn"
-      }
     ]
   },
   "experimental": {

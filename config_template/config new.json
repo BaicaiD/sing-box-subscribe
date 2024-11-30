@@ -19,86 +19,86 @@
     "store_rdrc": true
     }
   },
-  "dns": {
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "servers": [
-      {
-        "tag": "google",
-        "address": "tls://8.8.8.8"
-      },
-      {
-        "tag": "local",
-        "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
-      },
-      {
-        "tag": "fakeip",
-        "address": "fakeip"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
-      }
-    ],
-    "rules": [
-      {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
-      },
-      {
-        "outbound": "any",
-        "server": "local"
-      },
-      {
-        "clash_mode": "direct",
-        "server": "local"
-      },
-      {
-        "clash_mode": "global",
-        "server": "google"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": "geosite-cn",
-        "server": "fakeip"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "local"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
+    "dns": {
+        "fakeip": {
+          "enabled": true,
+          "inet4_range": "198.18.0.0/15",
+          "inet6_range": "fc00::/18"
+        },
+        "servers": [
           {
-            "rule_set": "geosite-geolocation-!cn",
-            "invert": true
+            "tag": "google",
+            "address": "tls://8.8.8.8"
           },
           {
-            "rule_set": "geoip-cn"
+            "tag": "local",
+            "address": "https://223.5.5.5/dns-query",
+            "detour": "direct"
+          },
+          {
+            "tag": "fakeip",
+            "address": "fakeip"
+          },
+          {
+            "tag": "block",
+            "address": "rcode://success"
           }
         ],
-        "server": "google",
-        "client_subnet": "114.114.114.114/24"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
+        "rules": [
+          {
+            "rule_set": "geosite-category-ads-all",
+            "server": "block"
+          },
+          {
+            "outbound": "any",
+            "server": "local"
+          },
+          {
+            "clash_mode": "direct",
+            "server": "local"
+          },
+          {
+            "clash_mode": "global",
+            "server": "google"
+          },
+          {
+            "query_type": [
+              "A",
+              "AAAA"
+            ],
+            "rule_set": "geosite-cn",
+            "server": "fakeip"
+          },
+          {
+            "rule_set": "geosite-cn",
+            "server": "local"
+          },
+          {
+            "type": "logical",
+            "mode": "and",
+            "rules": [
+              {
+                "rule_set": "geosite-geolocation-!cn",
+                "invert": true
+              },
+              {
+                "rule_set": "geoip-cn"
+              }
+            ],
+            "server": "google",
+            "client_subnet": "114.114.114.114/24"
+          },
+          {
+            "query_type": [
+              "A",
+              "AAAA"
+            ],
+            "server": "fakeip"
+          }
         ],
-        "server": "fakeip"
-      }
-    ],
-    "independent_cache": true,
-    "strategy": "prefer_ipv4"
-  },
+        "independent_cache": true,
+        "strategy": "prefer_ipv4"
+      },
   "inbounds": [
     {
       "tag": "tun",

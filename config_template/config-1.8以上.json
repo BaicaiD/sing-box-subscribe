@@ -382,6 +382,16 @@
           ],
           "outbound": "direct"
         },
+         { "domain_suffix": [
+          ".xn-ngstr-ra8j.com",
+          ".gooalaapis.cn",
+          "short.weixin.qg.com",
+          ".extshort.weixin.qq.com",
+          ".dns.weixin.qq.com.cn",
+          "long.weixin.qq.com"
+        ],
+        "outbound": "Proxy"
+      },
         {
           "ip_is_private": true,
           "outbound": "direct"

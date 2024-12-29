@@ -452,13 +452,6 @@
           "download_detour": "direct"
         },
         {
-          "tag": "geoip-telegram",
-          "type": "remote",
-          "format": "binary",
-          "url": "https://ghproxy.com/https://ghproxy.cn/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
-          "download_detour": "direct"
-        },
-        {
           "tag": "geosite-bilibili",
           "type": "remote",
           "format": "binary",

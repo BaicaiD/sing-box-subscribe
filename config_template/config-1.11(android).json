@@ -139,6 +139,18 @@
       "default": "America"
     },
     {
+      "tag":"Google",
+      "type":"selector",
+      "outbounds":[
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
       "tag":"Chinavideo",
       "type":"selector",
       "outbounds":[
@@ -406,6 +418,10 @@
         "outbound": "GameDownloadCN"
       },
       {
+        "rule_set": "geo-google",
+        "outbound": "Google"
+      },
+      {
         "rule_set": ["geo-googlefcm"],
         "outbound": "GoogleFCM"
       },
@@ -454,6 +470,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/YouTube.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geo-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Google.srs",
         "download_detour": "direct"
       },
       {

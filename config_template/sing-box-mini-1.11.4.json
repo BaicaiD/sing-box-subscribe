@@ -57,11 +57,11 @@
             "A",
             "AAAA"
           ],
-          "rule_set": ["ChinaMax_No_IPv6","ChinaMax"],
+          "rule_set": "geosite-cn",
           "server": "fakeip"
         },
         {
-          "rule_set": "ChinaMax_No_IPv6",
+          "rule_set": "geoip-cn",
           "server": "local"
         },
         {
@@ -73,7 +73,7 @@
               "invert": true
             },
             {
-              "rule_set": "ChinaMax"
+              "rule_set": "geoip-cn"
             }
           ],
           "server": "google",
@@ -339,7 +339,10 @@
             "d.metacubex.one",
             "weixin.qq.com",
             "mp.weixin.qq.com",
-            "res.wx.qq.com"
+            "res.wx.qq.com",
+            "www.kookapp.cn",
+            "img.kookapp.cn",
+            "sentry.kookapp.cn"
           ],
           "outbound": "direct"
         },
@@ -376,7 +379,7 @@
           "outbound": "Global"
         },
         {
-          "rule_set": ["ChinaMax_No_IPv6","ChinaMax"],
+          "rule_set": ["geoip-cn","geosite-cn"],
           "outbound": "China"
         }
       ],
@@ -445,19 +448,19 @@
           "download_detour": "direct"
         },
         {
-            "tag": "ChinaMax",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/ChinaMax.srs",
-            "download_detour": "direct"
-        },
-        {
-            "tag": "ChinaMax_No_IPv6",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/ChinaMax_No_IPv6.srs",
-            "download_detour": "direct"
-        }
+          "tag": "geosite-cn",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+          "download_detour": "direct"
+      },
+      {
+          "tag": "geoip-cn",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+          "download_detour": "direct"
+      }
       ]
     }
   }

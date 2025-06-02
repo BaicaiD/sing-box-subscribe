@@ -140,6 +140,19 @@
       "default": "America"
     },
     {
+      "tag":"Google",
+      "type":"selector",
+      "outbounds":[
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
       "tag":"Spotify",
       "type":"selector",
       "outbounds":[
@@ -356,6 +369,10 @@
         "outbound": "OpenAI"
       },
       {
+        "rule_set": "geosite-google",
+        "outbound": "Google"
+      },
+      {
         "rule_set": "geosite-spotify",
         "outbound": "Spotify"
       },
@@ -397,6 +414,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/OpenAI.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Google.srs",
         "download_detour": "direct"
       },
       {

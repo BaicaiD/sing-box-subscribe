@@ -439,105 +439,105 @@
           "tag": "geosite-category-ads-all",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Advertising.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Advertising.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-openai",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/OpenAI.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/OpenAI.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-youtube",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/YouTube.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/YouTube.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-googlefcm",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/GoogleFCM.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/GoogleFCM.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-chinavideo",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/ChinaMedia.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/ChinaMedia.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-spotify",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Spotify.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Spotify.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-GameDownloadCN",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/GameDownloadCN.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/GameDownloadCN.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-EA",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/EA.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/EA.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-microsoft",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Microsoft.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Microsoft.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-category-steam",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Steam.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Steam.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-steamcn",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/SteamCN.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/SteamCN.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-primevideo",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/GlobalMedia.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/GlobalMedia.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-Global-!cn",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/Global.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Global.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-cn",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/ChinaMax.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/ChinaMax.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-wechat",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@1.2/rule/WeChat.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/WeChat.srs",
           "download_detour": "direct"
         }
       ]

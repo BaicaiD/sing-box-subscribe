@@ -33,7 +33,8 @@
       },
       {
         "tag": "google",
-        "address": "tls://8.8.8.8"
+        "address": "tls://8.8.8.8",
+        "detour":"Proxy"
       },
       {
         "tag": "fakeip",
@@ -41,10 +42,6 @@
       }
     ],
     "rules": [
-      {
-        "outbound": "any",
-        "server": "local"
-      },
       {
         "clash_mode": "direct",
         "server": "local"

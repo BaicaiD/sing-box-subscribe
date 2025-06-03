@@ -59,7 +59,7 @@
           "A",
           "AAAA"
         ],
-        "rule_set": "geosite-cn",
+        "rule_set": "geo-Global-!cn",
         "server": "fakeip"
       },
       {

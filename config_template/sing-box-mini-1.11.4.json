@@ -388,63 +388,63 @@
           "tag": "geosite-category-ads-all",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Advertising.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/Advertising.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-openai",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/OpenAI.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/OpenAI.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-spotify",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Spotify.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/Spotify.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-GameDownloadCN",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/GameDownloadCN.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/GameDownloadCN.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-EA",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/EA.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/EA.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-microsoft",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Microsoft.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/Microsoft.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-category-steam",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Steam.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/Steam.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geosite-steamcn",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/SteamCN.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/SteamCN.srs",
           "download_detour": "direct"
         },
         {
           "tag": "geo-Global-!cn",
           "type": "remote",
           "format": "binary",
-          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@3.0/rule/Global.srs",
+          "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/Global.srs",
           "download_detour": "direct"
         },
         {

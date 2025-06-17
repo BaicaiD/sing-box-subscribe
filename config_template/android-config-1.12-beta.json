@@ -50,7 +50,7 @@
       },
       {
         "query_type": ["A", "AAAA"],
-        "rule_set": "geosite-cn",
+        "rule_set": "geosite-geolocation-!cn",
         "server": "fakeip"
       },
       {

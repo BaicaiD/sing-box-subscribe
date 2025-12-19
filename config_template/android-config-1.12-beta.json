@@ -75,7 +75,7 @@
             "invert": true
           },
           {
-            "rule_set": "geoip_cn"
+            "rule_set": "geoip-cn"
           }
         ],
         "server": "google",

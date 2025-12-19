@@ -1,104 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <title>生成 Sing-Box 配置</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Toperlock/sing-box-subscribe/main/public/favicon.ico" type="image/x-icon">
-    <title>生成sing-box配置</title>
+    <!-- Google Fonts: Roboto + Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
+        /* -------------------------
+           Material Design 3 Expressive 基础样式
+        ------------------------- */
+        :root {
+            --md3-primary: #6750a4;
+            --md3-on-primary: #ffffff;
+            --md3-secondary: #625b71;
+            --md3-on-secondary: #ffffff;
+            --md3-surface: #ffffff;
+            --md3-on-surface: #1c1b1f;
+            --md3-error: #b3261e;
+            --md3-on-error: #ffffff;
+            --md3-radius: 16px;
+            --md3-elevation: 4px;
+            --md3-shadow-color: rgba(0, 0, 0, 0.15);
+            --ripple-color: rgba(255, 255, 255, 0.3);
+        }
+
         body {
-            display: flex;
-            flex-direction: column; /* 垂直排列 */
-            align-items: center; /* 水平居中对齐 */
-            max-width: 100%; /* 调整内容最大宽度 */
-            /* transform: scale(1.9);  将内容放大190% */
-            justify-content: center;
-            height: 100vh; /* 使内容在垂直方向上居中 */
-            margin: 0; /* 去掉默认的页面边距 */
-            font-family: Arial, sans-serif; /* 可选的字体 */
+            font-family: 'Roboto', sans-serif;
             background-color: #f2f2f2;
-        }
-        。container {
+            margin: 0;
             display: flex;
-            flex-direction: row; /* 水平排列 */
-            align-items: center; /* 水平居中对齐 */
+            justify-content: center;
+            padding: 24px;
         }
-        /*
-        .left-box {
-            flex: 1;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            gap: 24px;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: var(--md3-on-surface);
+            font-size: 28px;
+            margin: 0 0 16px 0;
+        }
+
+        /* -------------------------
+           卡片效果
+        ------------------------- */
+        .card {
+            background-color: var(--md3-surface);
+            border-radius: var(--md3-radius);
+            box-shadow: 0 var(--md3-elevation) var(--md3-elevation*2) var(--md3-shadow-color);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* -------------------------
+           输入框
+        ------------------------- */
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            border-radius: var(--md3-radius);
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 14px;
+            background-color: #fafafa;
+            resize: vertical;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: var(--md3-primary);
+            box-shadow: 0 0 0 2px rgba(103,80,164,0.2);
+        }
+
+        /* -------------------------
+           按钮
+        ------------------------- */
+        button, input[type="submit"] {
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            border: none;
+            border-radius: var(--md3-radius);
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        button {
+            background-color: var(--md3-secondary);
+            color: var(--md3-on-secondary);
+        }
+        button:hover {
+            background-color: #7c7591;
+        }
+
+        input[type="submit"] {
+            background-color: var(--md3-primary);
+            color: var(--md3-on-primary);
+        }
+        input[type="submit"]:hover {
+            background-color: #886dcf;
+        }
+
+        /* ripple effect */
+        button::after, input[type="submit"]::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 0.6;
+            pointer-events: none;
+            background-color: var(--ripple-color);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        button:active::after, input[type="submit"]:active::after {
+            transform: scale(4);
+            opacity: 0;
+            transition: 0s;
+        }
+
+        select {
             padding: 10px;
+            background-color: var(--md3-surface);
+            color: var(--md3-on-surface);
+            border: 1px solid #ccc;
+            border-radius: var(--md3-radius);
         }
-        */
-        。right-box {
-            flex: 2;
-            padding: 20px;
-            max-width: 100%; /* 设置最大宽度为100% */
-            box-sizing: border-box; /* 让padding不影响最大宽度 */
+
+        /* -------------------------
+           Instructions
+        ------------------------- */
+        .instructions {
+            font-size: 14px;
+            color: var(--md3-on-surface);
+            line-height: 1.5;
         }
-        /* 媒体查询：屏幕宽度小于768px时应用下面的样式 */
-        @media screen and (max-width: 768px) {
+        .instructions span {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .instructions .error {
+            color: var(--md3-error);
+            font-weight: 600;
+        }
+
+        /* -------------------------
+           预览输出
+        ------------------------- */
+        #config-text {
+            min-height: 150px;
+            padding: 12px;
+            background-color: #fafafa;
+            border-radius: var(--md3-radius);
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        /* -------------------------
+           响应式适配
+        ------------------------- */
+        @media (max-width: 768px) {
             .container {
-                flex-direction: column; /* 垂直排列 */
-            }
-            .right-box {
-                width: 100%; /* 平分屏幕宽度 */
-            }
-            .config-content {
-                white-space: normal; /* 在小屏幕下允许内容换行 */
-                margin-left: 20px; /* 与左边隔开20px，根据需要调整距离 */
-                margin-right: 20px; /* 与右边隔开20px，根据需要调整距离 */
+                padding: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!--
-        <div class="left-box">
-            <h1>Providers JSON 模板</h1>
-            <form id="providers-form" method="POST" action="/update_providers">
-                <textarea name="providers_data" rows="10" cols="40" style="width: 400px; height: 400px;">{{ providers_data | safe }}</textarea>
-                <br>
-            </form>
-        </div>
-        -->
-        <div class="right-box">
+        <!-- JSON 编辑卡片 -->
+        <div class="card">
             <h1>Edit TEMP_JSON_DATA</h1>
             <form id="temp-json-form" method="POST" action="/edit_temp_json">
-                <textarea name="temp_json_data" rows="10" cols="40" style="width: 400px; height: 400px;">{{ temp_json_data | default('') }}</textarea>
-                <br>
-                <input type="submit" value="save">
+                <textarea name="temp_json_data">{{ temp_json_data | default('') }}</textarea>
+                <input type="submit" value="Save">
             </form>
             <button onclick="toggleLanguage()">Switch Language</button>
-            <div class="form-container" style="display: flex; align-items: center;">
-                <form method="POST" action="/generate_config" style="display: flex; align-items: center;">
-                    <select name="template_index">
-                        {% for option in template_options %}
-                        <option value="{{ loop.index - 1 }}">{{ option }}</option>
-                        {% endfor %}
-                    </select>
-                    <input type="submit" value="Select and Generate">
-                </form>
-            </div>
+            <form method="POST" action="/generate_config" style="display: flex; gap: 12px; align-items: center;">
+                <select name="template_index">
+                    {% for option in template_options %}
+                    <option value="{{ loop.index - 1 }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Select and Generate">
+            </form>
         </div>
-        <div class="config-content">
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="1"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">前提：在此网页正确填写订阅链接，生成配置失败是因为同一时间别人也在生成配置，导致你填写的内容被复原。建议使用/config/URL的形式</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="2"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">填写订阅地址在引号 “” 内，注意订阅地址末尾不要有换行，这很容易被忽视！！！</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="3" data-color="red"><span style="font-weight: bold; color: red; margin: 5px 0; font-size: 14px;">提醒: 点击保存后请立即生成配置文件！！！</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="4"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">不然别人也会看到你保存的 TEMP_JSON_DATA 内容</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="5" data-color="red"><span style="font-weight: bold; color: red; margin: 5px 0; font-size: 14px;">“订阅地址”是以 "http://" 开头的【包含】节点信息的v2/clash链接或者是以 "vmess://","hysteria2://"... 之类开头的单条URI节点链接，多条URI请在每条末尾添加换行符：\n 代替换行（请你明白json写法规范），也可以填写base64内容</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="6"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">机场提供的订阅链接能直接在浏览器打开，这脚本就能使用。请你自行检查是否可以。如果浏览器能打开订阅，但还是转换失败请你放弃使用此项目</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="7" data-color="red"><span style="font-weight: bold; color: red; margin: 5px 0; font-size: 14px;">需要特殊环境才能打开的订阅链接，请你在 TEMP_JSON_DATA 修改 "User-Agent" 或者先行把机场订阅链接内容复制到gist里，脚本才会解析成功。或者本地运行脚本</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="8"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">全部都是 SSR 协议会报错，或者请删掉左边方框内 exclude_protocol 引号里面的 ssr 这个三个字符即可！！！！！！</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="9" data-color="red"><span style="font-weight: bold; color: red; margin: 5px 0; font-size: 14px;">机场订阅里有hy2新协议，请修改 "User-Agent" 为：clashmeta。球球你了，别塞文件大于1MB的clash，你只需要保留proxies字段，别写那破鸡巴规则了，vercel服务器解析超时了懂吗老弟</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="10"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">以上不是废话，没成功生成配置请你仔细阅读以上内容</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="11" data-color="red"><span style="font-weight: bold; color: red; margin: 5px 0; font-size: 14px;">不看说明的都是傻逼，自以为是的大聪明</span></h3>
-            <h3 style="margin: 8px 0; font-size: 14px;" data-translate="12"><span style="font-weight: bold; color: black; margin: 5px 0; font-size: 14px;">生成配置成功后请不要用第三方输入法复制内容，会有长度限制复制不全</span></h3>
-            <pre id="config-text"></pre>
+
+        <!-- 指南/说明卡片 -->
+        <div class="card instructions">
+            <span data-translate="1">前提：在此网页正确填写订阅链接，生成配置失败是因为同一时间别人也在生成配置，导致你填写的内容被复原。建议使用/config/URL的形式</span>
+            <span data-translate="3" class="error">提醒: 点击保存后请立即生成配置文件！！！</span>
+            <span data-translate="5">“订阅地址”是以 "http://" 开头的【包含】节点信息的v2/clash链接或者是以 "vmess://","hysteria2://"... 之类开头的单条URI节点链接，多条URI请在每条末尾添加换行符: \n 代替换行（请你明白json写法规范），也可以填写base64内容</span>
+            <span data-translate="9" class="error">机场订阅里有hy2新协议，请修改 "User-Agent" 为：clashmeta。球球你了，别塞文件大于1MB的clash，你只需要保留proxies字段，别写那破鸡巴规则了，vercel服务器解析超时了懂吗老弟</span>
         </div>
+
+        <!-- 输出配置 -->
+        <pre id="config-text" class="card"></pre>
     </div>
+
     <script>
+        // -------------------------
+        // JSON 提交和输出功能
+        // -------------------------
         const initialTempJsonData = '{"subscribes":[{"url":"URL","tag":"tag_1","enabled":true,"emoji":1,"subgroup":"","prefix":"","User-Agent":"v2rayng"},{"url":"URL","tag":"tag_2","enabled":false,"emoji":0,"subgroup":"命名/named","prefix":"❤️","User-Agent":"clashmeta"}],"auto_set_outbounds_dns":{"proxy":"","direct":""},"save_config_path":"./config.json","auto_backup":false,"exclude_protocol":"ssr","config_template":"","Only-nodes":false}';
         let tempJsonData = initialTempJsonData;
+
         document.querySelector('#temp-json-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
@@ -110,69 +232,34 @@
             if (response.ok) {
                 const responseData = await response.text();
                 const configContent = document.querySelector('#config-text');
-                configContent.textContent = responseData
+                configContent.textContent = responseData;
             }
         });
+
+        // -------------------------
+        // 语言切换
+        // -------------------------
         const languageData = {
-            "1": "Prerequisite: Fill in the subscription link correctly on this web page. The failure to generate the configuration is because someone else is generating the configuration at the same time, causing the content you filled in to be cleared. It is recommended to use the form /config/URL.",
-            "2": "Fill in the subscription link within the quotes '', and be careful not to have line breaks at the end of the subscription link, as this can be easily overlooked!!! (Why do you like to fill in URLs with enable set to false? why? ? ? ?)",
+            "1": "Prerequisite: Fill in the subscription link correctly on this web page. Failure may be due to someone else generating configuration simultaneously.",
             "3": "Reminder: After clicking save, please immediately generate the configuration file!!!",
-            "4": "Otherwise, others will be able to see the content of your saved TEMP_JSON_DATA.",
-            "5": "The 'subscription link' starts with 'http://' and includes node information for v2/clash links or is a single URI node link starting with 'vmess://', 'hysteria2://'... etc. Link, if there are multiple URIs, please add a newline character at the end of each one: '\\n' instead of newline (please understand the json writing specification), you can also fill in the base64 content.",
-            "6": "subscription links provided by Service can be directly opened in the browser, and the script can use them. Please check if it works on your end.",
-            "7": "For subscription links that require a special environment to open, please modify 'User-Agent' in TEMP_JSON_DATA, or copy the content of the airport subscription link to gist in advance for the script to parse successfully. Alternatively, run the script locally.",
-            "8": "All SSR protocols will report errors, or please delete the three characters 'ssr' in the exclude_protocol quotation marks in the left box.",
-            "9": "If there is a new hy2 protocol in the sub link, please modify 'User-Agent' to: clashmeta. Damn it, don’t plug in a crash with a file larger than 1MB. You only need to keep the proxies field. Don’t write those crappy rules. The vercel server parsing timed out. Do you understand?",
-            "10": "The above is not nonsense; if you fail to generate the configuration successfully, please read the above content carefully.",
-            "11": "Because there is no database used, it will not return a configuration file link. After generating the configuration content, copy it to gist as a sing-box remote link.",
-            "12": "After successfully generating the configuration, please do not use third-party input methods to copy the content, as there may be length limitations and the copy may not be complete.",
-            // 添加其他翻译...
+            "5": "The 'subscription link' starts with 'http://' and includes node information or a single URI node link starting with 'vmess://', 'hysteria2://', etc. For multiple URIs, add '\\n' at the end of each.",
+            "9": "If there is a new hy2 protocol, modify 'User-Agent' to: clashmeta. Keep only the proxies field. Do not include large rules."
         };
-        let isEnglish = false; // 初始状态为中文
+
+        let isEnglish = false;
 
         function toggleLanguage() {
             isEnglish = !isEnglish;
-            const elementsToTranslate = document.querySelectorAll('[data-translate]');
-
-            elementsToTranslate.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                const originalColor = element.getAttribute('data-color');
-                const originalLink = element.getAttribute('data-link');
-
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
                 if (isEnglish && languageData[key]) {
-                    if (element.tagName === 'A') {
-                        element.href = languageData[key];
-                    } else {
-                        // 处理 <span> 元素
-                        const spanElement = element.querySelector('span');
-                        if (spanElement) {
-                            spanElement.textContent = languageData[key];
-                            spanElement.style.color = originalColor;
-                            spanElement.setAttribute('data-link', languageData[key]);
-                        } else {
-                            element.textContent = languageData[key];
-                            element.style.color = originalColor;
-                        }
-                    }
+                    el.textContent = languageData[key];
                 } else {
-                    if (element.tagName === 'A') {
-                        element.href = originalLink;
-                    } else {
-                    // 如果需要，可以添加其他语言的支持
-                        window.location.reload();
-                    }
+                    window.location.reload();
                 }
             });
         }
     </script>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flashes">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
 </body>
 </html>

@@ -7,7 +7,7 @@
             "emoji": 1,
             "subgroup": "",
             "prefix": "",
-            "User-Agent":"clashmeta"
+            "User-Agent":"v2rayng"
         },
         {
             "url": "URL",
@@ -29,4 +29,5 @@
     "config_template": "",
     "Only-nodes": false
 }
+
 

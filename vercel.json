@@ -1,11 +1,9 @@
 {
-    "functions": {
-        "api/app.py": {
-          "maxDuration": 60
-        }
-    },
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/app" }
-    ],
-    "outputDirectory": "tmp"
+  "version": 2,
+  "builds": [
+    { "src": "main.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "main.py" }
+  ]
 }

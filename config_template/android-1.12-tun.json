@@ -425,7 +425,7 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/BaicaiD/sing-box-geosite@4.0/rule/ChinaMax.srs",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
         "download_detour": "Proxy"
       }
     ]
